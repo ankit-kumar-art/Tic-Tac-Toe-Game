@@ -30,6 +30,7 @@ body{
     box-shadow: 0 0 1rem white;
     font-size: 50px;
     background-color: white;
+    cursor: pointer;
 }
 #second {
     padding: 0.5rem;
