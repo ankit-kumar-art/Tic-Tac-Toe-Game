@@ -1,37 +1,217 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!doctype html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="utf-8" />
 <head>
-    <meta charset="utf-8">
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="main.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adeline Palmerston — Portfolio</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <div class="msg-container hide">
-        <p id="msg"> Winner</p>
-        <button id="new-btn">New Game</button>
-    </div>
-    <h1>Tic Tac Toe</h1>
-    <main>
-        <div class="container">
-            <div class="game">
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-            </div>
-        </div>
-        <button id="second">Reset</button>
-    </main>
-    <script src="scripts.js"></script>
-</body>
 
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Adeline <span class="highlight">Palmerston</span></h1>
+        <p class="tag">My Portfolio</p>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#portfolio">Photo</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Home / Page 01 -->
+    <section id="home" class="hero page page-01">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <p class="page-label">Page | 01</p>
+          <h2>My Portfolio</h2>
+          <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn primary" id="explore-btn" href="#about">Explore Now</a>
+            <button class="btn ghost" id="play-video">Play Video ▶</button>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- placeholder image -->
+          <div class="photo-card">
+            <img src="https://via.placeholder.com/520x360?text=Adeline+Palmerston" alt="Adeline Palmerston">
+            <p class="photo-caption">Adeline Palmerston</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction / Page 02 -->
+    <section id="about" class="page page-02">
+      <div class="container">
+        <p class="page-label">Page | 02</p>
+        <h3>Introduction</h3>
+
+        <div class="two-col">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Page 03 -->
+    <section class="page page-03">
+      <div class="container">
+        <p class="page-label">Page | 03</p>
+        <h3>About Me</h3>
+
+        <div class="card-row">
+          <div class="card">
+            <h4>About Me</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>My Vision</h4>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>My Mission</h4>
+            <p>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision / Pages 04-05 (combined) -->
+    <section class="page page-04">
+      <div class="container">
+        <p class="page-label">Page | 04</p>
+        <h3>My Vision</h3>
+
+        <div class="numbered-list">
+          <div class="num">01.</div>
+          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        </div>
+
+        <div class="numbered-list">
+          <div class="num">02.</div>
+          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page page-05">
+      <div class="container">
+        <p class="page-label">Page | 05</p>
+        <h3>My Mission</h3>
+        <ul class="mission-list">
+          <li>01. Lorem ipsum dolor sit amet...</li>
+          <li>02. Lorem ipsum dolor sit amet...</li>
+          <li>03. Lorem ipsum dolor sit amet...</li>
+          <li>04. Lorem ipsum dolor sit amet...</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Portfolio / Page 06 -->
+    <section id="portfolio" class="page page-06">
+      <div class="container">
+        <p class="page-label">Page | 06</p>
+        <h3>My Favorite Portfolio</h3>
+        <p class="lead">A few selected works that show my style and approach.</p>
+
+        <div class="portfolio-grid">
+          <figure class="work-card">
+            <img src="https://via.placeholder.com/600x400?text=Portfolio+1" alt="Portfolio 1" />
+            <figcaption>Portfolio 01 — Short description</figcaption>
+          </figure>
+
+          <figure class="work-card">
+            <img src="https://via.placeholder.com/600x400?text=Portfolio+2" alt="Portfolio 2" />
+            <figcaption>Portfolio 02 — Short description</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thank You / Page 10 -->
+    <section class="page page-10">
+      <div class="container">
+        <p class="page-label">Page | 10</p>
+        <h3>Thank You</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="page contact-section">
+      <div class="container contact-grid">
+        <div>
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:adeline@example.com">adeline@example.com</a></p>
+          <p>Phone: +91 12345 67890</p>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent — replace with real handler');">
+          <input type="text" name="name" placeholder="Your name" required/>
+          <input type="email" name="email" placeholder="Email" required/>
+          <textarea name="message" rows="4" placeholder="Message"></textarea>
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Adeline Palmerston — All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Simple modal for video -->
+  <div id="video-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="close-video">✕</button>
+      <div class="video-wrap">
+        <iframe id="video-iframe" width="100%" height="400" src="" title="Portfolio Video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
