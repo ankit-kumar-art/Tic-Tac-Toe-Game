@@ -1,205 +1,130 @@
-<!DOCTYPE html><!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nayan Sahu— Portfolio</title>
+<meta charset="UTF-8">
+<title>Rock Paper Scissors</title>
 
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f8e2b5;
+        text-align: center;
+    }
 
-  <link rel="stylesheet" href="main.css" />
+    .header {
+        background: black;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .choices {
+        margin-top: 40px;
+    }
+
+    .choice {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin: 10px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .rock { background: #ff7aa2; }
+    .paper { background: #b085f5; }
+    .scissors { background: #6fa8ff; }
+
+    .score {
+        margin-top: 30px;
+        font-size: 24px;
+    }
+
+    .score span {
+        margin: 0 40px;
+    }
+
+    .label {
+        font-size: 14px;
+        color: #333;
+    }
+
+    .result {
+        margin-top: 25px;
+    }
+
+    .result button {
+        background: green;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+</style>
 </head>
+
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <h1>Nayan <span class="highlight">Sahu</span></h1>
-        <p class="tag">My Portfolio</p>
-      </div>
+<div class="header">Rock Paper Scissors</div>
 
-      <nav class="main-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#portfolio">Photo</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<div class="choices">
+    <div class="choice rock" onclick="play('rock')">✊</div>
+    <div class="choice paper" onclick="play('paper')">✋</div>
+    <div class="choice scissors" onclick="play('scissors')">✌</div>
+</div>
 
-      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
-    </div>
-  </header>
+<div class="score">
+    <span>
+        <div id="you">0</div>
+        <div class="label">you</div>
+    </span>
+    <span>
+        <div id="comp">0</div>
+        <div class="label">comp</div>
+    </span>
+</div>
 
-  <main>
+<div class="result">
+    <button id="msg">Make your move</button>
+</div>
 
-    <!-- Home / Page 01 -->
-    <section id="home" class="hero page page-01">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <p class="page-label">Page | 01</p>
-          <h2>My Portfolio</h2>
-          <p class="lead">
-            I’m a versatile content creator specializing in engaging visuals, compelling storytelling, and strategic digital communication.
-            With experience across social media, video production, and branding, I craft content that connects, informs, and inspires. 
-            My portfolio showcases creative problem-solving, audience-focused design, and impactful narratives tailored to elevate any brand or project.
+<script>
+    let userScore = 0;
+    let compScore = 0;
 
-          </p>
+    function play(userChoice) {
+        const choices = ["rock", "paper", "scissors"];
+        const compChoice = choices[Math.floor(Math.random() * 3)];
 
-          <div class="hero-cta">
-            <a class="btn primary" id="explore-btn" href="https://youtube.com/@nayansahu007_?si=fWqrzxK5r3CLGeZZ">Explore Now</a>
-            <button class="btn ghost" id="play-video">Play Video ▶</button>
-          </div>
-        </div>
+        if (userChoice === compChoice) {
+            showResult("It's a Draw 😐");
+        }
+        else if (
+            (userChoice === "rock" && compChoice === "scissors") ||
+            (userChoice === "paper" && compChoice === "rock") ||
+            (userChoice === "scissors" && compChoice === "paper")
+        ) {
+            userScore++;
+            document.getElementById("you").innerText = userScore;
+            showResult("You Win 🎉");
+        }
+        else {
+            compScore++;
+            document.getElementById("comp").innerText = compScore;
+            showResult("Computer Wins 🤖");
+        }
+    }
 
-        <div class="hero-right">
-          <!-- placeholder image -->
-          <div class="photo-card">
-            <img src="https://via.placeholder.com/520x360?text=Adeline+Palmerston" alt="Adeline Palmerston">
-            <p class="photo-caption">Nayan Sahu</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    function showResult(text) {
+        document.getElementById("msg").innerText = text;
+    }
+</script>
 
-    <!-- Introduction / Page 02 -->
-    <section id="about" class="page page-02">
-      <div class="container">
-        <p class="page-label">Page | 02</p>
-        <h3>Introduction</h3>
-
-        <div class="two-col">
-          <p>
-           I’m Nayan Sahu, a lifestyle creator making daily vlogs, lifestyle videos, challenges, and shorts on YouTube. On Instagram, I create funny, relatable, and trending reels. My content blends authenticity, energy,
-            and humor to connect with audiences. Explore my work to see the moments I turn into engaging stories.
-          </p>
-
-          <p>
-            I’m Nayan Sahu, a lifestyle creator making daily vlogs, lifestyle videos, challenges, and shorts on YouTube. On Instagram, I create funny, relatable, and trending reels. My content blends authenticity, energy, and humor to connect with audiences. Explore my work to see the moments 
-            I turn into engaging stories.
-          </p>
-        </div>
-      </div>
-    </section>https://youtube.com/@nayansahu007_?si=fWqrzxK5r3CLGeZZ
-
-    <!-- About / Page 03 -->
-    <section class="page page-03">
-      <div class="container">
-        <p class="page-label">Page | 03</p>
-        <h3>About Me</h3>
-
-        <div class="card-row">
-          <div class="card">
-            <h4>About Me</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.
-            </p>
-          </div>
-
-          <div class="card">
-            <h4>My Vision</h4>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </div>
-
-          <div class="card">
-            <h4>My Mission</h4>
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vision / Pages 04-05 (combined) -->
-    <section class="page page-04">
-      <div class="container">
-        <p class="page-label">Page | 04</p>
-        <h3>My Vision</h3>
-
-        <div class="numbered-list">
-          <div class="num">01.</div>
-          <div class="text">To create high-energy, authentic content that turns everyday moments into engaging stories.
-            My vision is to entertain, inspire, and grow a connected community through relatable vlogs, exciting challenges,
-            and trend-driven videos that keep audiences coming back for more</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio / Page 06 -->
-    <section id="portfolio" class="page page-06">
-      <div class="container">
-        <p class="page-label">Page | 06</p>
-        <h3>My Favorite Portfolio</h3>
-        <p class="lead">A few selected works that show my style and approach.</p>
-
-        <div class="portfolio-grid">
-          <figure class="work-card">
-            <img src="https://via.placeholder.com/600x400?text=Portfolio+1" alt="Portfolio 1" />
-            <figcaption>Portfolio 01 — Short description</figcaption>
-          </figure>
-
-          <figure class="work-card">
-            <img src="https://via.placeholder.com/600x400?text=Portfolio+2" alt="Portfolio 2" />
-            <figcaption>Portfolio 02 — Short description</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Thank You / Page 10 -->
-    <section class="page page-10">
-      <div class="container">
-        <p class="page-label">Page | 10</p>
-        <h3>Thank You</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident.
-        </p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="page contact-section">
-      <div class="container contact-grid">
-        <div>
-          <h4>Contact</h4>
-          <p>Email: <a href="mailto:nayansahu294@gamil.com">nayansahu294@gamil.com</a></p>
-          <p>Phone: +91 8269851228</p>
-        </div>
-
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent — replace with real handler');">
-          <input type="text" name="name" placeholder="Your name" required/>
-          <input type="email" name="email" placeholder="Email" required/>
-          <textarea name="message" rows="4" placeholder="Message"></textarea>
-          <button class="btn primary" type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Nayan sahu — All rights reserved.</small>
-    </div>
-  </footer>
-
-  <!-- Simple modal for video -->
-  <div id="video-modal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" id="close-video">✕</button>
-      <div class="video-wrap">
-        <iframe id="video-iframe" width="100%" height="400" src="" title="Portfolio Video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
